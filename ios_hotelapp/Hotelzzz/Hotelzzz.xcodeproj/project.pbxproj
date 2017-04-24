@@ -158,7 +158,7 @@
 				TargetAttributes = {
 					F222BCD11E81E72400CE0EB2 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = YYTZJ7C74S;
+						DevelopmentTeam = Z534HUMB6C;
 						ProvisioningStyle = Automatic;
 					};
 					F222BCE51E81E72500CE0EB2 = {
@@ -357,7 +357,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YYTZJ7C74S;
+				DEVELOPMENT_TEAM = Z534HUMB6C;
 				INFOPLIST_FILE = Hotelzzz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hipmunk.Hotelzzz;
@@ -370,7 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YYTZJ7C74S;
+				DEVELOPMENT_TEAM = Z534HUMB6C;
 				INFOPLIST_FILE = Hotelzzz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hipmunk.Hotelzzz;

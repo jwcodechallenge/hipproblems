@@ -22,7 +22,6 @@ private func jsonStringify(_ obj: [AnyHashable: Any]) -> String {
     return String(data: data, encoding: .utf8)!
 }
 
-
 class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate {
 
     struct Search {
@@ -40,6 +39,7 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
     }
 
     private var _searchToRun: Search?
+    private var selectedHotel = [AnyHashable:Any]()
 
     lazy var webView: WKWebView = {
         let webView = WKWebView(frame: CGRect.zero, configuration: {
@@ -83,8 +83,17 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
                 "window.JSAPI.runHotelSearch(\(searchToRun.asJSONString))",
                 completionHandler: nil)
         case "HOTEL_API_HOTEL_SELECTED":
+            self.selectedHotel = (message.body as! [AnyHashable:Any])
             self.performSegue(withIdentifier: "hotel_details", sender: nil)
         default: break
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if let detailVC = segue.destination as? HotelViewController {
+            detailVC.configure(with: self.selectedHotel)
         }
     }
 }
