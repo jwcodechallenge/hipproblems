@@ -122,56 +122,6 @@
             </objects>
             <point key="canvasLocation" x="-266" y="-24"/>
         </scene>
-        <!--Select hotel sort-->
-        <scene sceneID="mh3-Cf-Las">
-            <objects>
-                <viewController id="FPC-mT-DqL" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mMd-bS-xwf"/>
-                        <viewControllerLayoutGuide type="bottom" id="mh3-fF-0pC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EVe-IB-NxI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Select hotel sort" id="Pwl-3H-5Qg">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="43f-hx-Bg0">
-                            <connections>
-                                <action selector="dismissWithSender:" destination="FPC-mT-DqL" id="Ttg-CO-V0Y"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bp3-vB-aZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2478" y="-656"/>
-        </scene>
-        <!--Select hotel filters-->
-        <scene sceneID="bkW-2h-LaA">
-            <objects>
-                <viewController id="cIZ-1D-rMf" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kd1-wR-CGV"/>
-                        <viewControllerLayoutGuide type="bottom" id="mcT-pb-YxW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="q2P-9E-9Jp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Select hotel filters" id="Kkd-oh-Evl">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v7a-jk-OPA">
-                            <connections>
-                                <action selector="dismissWithSender:" destination="cIZ-1D-rMf" id="tDU-qd-Lz0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rab-A5-nXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2478" y="-2"/>
-        </scene>
         <!--Searching...-->
         <scene sceneID="eSi-zF-Gld">
             <objects>
@@ -189,16 +139,12 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Filter" id="sgq-9F-p40">
                                 <connections>
-                                    <segue destination="5nq-cZ-lSb" kind="popoverPresentation" identifier="select_filters" popoverAnchorBarButtonItem="sgq-9F-p40" id="SpM-A9-5Th">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <action selector="showFilter:" destination="mfQ-fo-jKR" id="MGO-kD-TM0"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Sort" id="Xjt-gD-deI">
                                 <connections>
-                                    <segue destination="7ab-sq-2R9" kind="popoverPresentation" identifier="select_sort" popoverAnchorBarButtonItem="Xjt-gD-deI" id="c7p-Es-yfb">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <action selector="showSort:" destination="mfQ-fo-jKR" id="8OL-oL-4Mm"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -236,7 +182,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="JmE-ki-V5R">
-                                <rect key="frame" x="169" y="187" width="37" height="37"/>
+                                <rect key="frame" x="169" y="186" width="37" height="37"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="76f-Ah-Y0l">
@@ -281,7 +227,7 @@ Alba City, Mars 94113</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jN-m1-8O9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1536.8" y="739.88005997001505"/>
+            <point key="canvasLocation" x="1439" y="-24"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="xh7-QO-b3X">
@@ -368,42 +314,6 @@ Alba City, Mars 94113</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-xb-BLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1135" y="-23"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="cUw-8V-etF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ab-sq-2R9" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5HC-o4-eG9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="FPC-mT-DqL" kind="relationship" relationship="rootViewController" id="47n-sE-dk4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="65e-tC-Iz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1535" y="-656"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CmB-aN-VZ3">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5nq-cZ-lSb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nRd-Gf-g6J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="cIZ-1D-rMf" kind="relationship" relationship="rootViewController" id="ukO-PH-ojJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="093-ns-ATD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1538" y="-2"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

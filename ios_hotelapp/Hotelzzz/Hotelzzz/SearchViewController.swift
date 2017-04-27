@@ -22,7 +22,33 @@ private func jsonStringify(_ obj: [AnyHashable: Any]) -> String {
     return String(data: data, encoding: .utf8)!
 }
 
-class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate {
+
+enum ListingSort: String {
+    case Name = "name"
+    case PriceAscending = "priceAscend"
+    case PriceDescending = "priceDescend"
+    case none
+    
+    var displayTitle: String {
+        switch self {
+        case .Name: return "Name"
+        case .PriceAscending: return "Price Ascending"
+        case .PriceDescending: return "Price Descending"
+        case .none: return ""
+        }
+    }
+    
+    init(with displayTitle: String) {
+        switch displayTitle {
+        case ListingSort.Name.displayTitle: self = ListingSort.Name
+        case ListingSort.PriceAscending.displayTitle: self = ListingSort.PriceAscending
+        case ListingSort.PriceDescending.displayTitle: self = ListingSort.PriceDescending
+        default: self = ListingSort.none
+        }
+    }
+}
+
+class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     struct Search {
         let location: String
@@ -40,6 +66,21 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
 
     private var _searchToRun: Search?
     private var selectedHotel = [AnyHashable:Any]()
+    private var selectedSort: ListingSort = .none {
+        didSet {
+            webView.evaluateJavaScript(
+                "window.JSAPI.setHotelSort(\"\(selectedSort.rawValue)\")",
+                completionHandler: nil)
+        }
+    }
+    private var priceRange = (0, 0) {
+        didSet {
+            let lower = priceRange.0 == 0 ? "null" : String(priceRange.0)
+            let upper = priceRange.1 == 0 ? "null" : String(priceRange.1)
+            let js = "window.JSAPI.setHotelFilters({priceMin: \(lower), priceMax: \(upper)})"
+            webView.evaluateJavaScript(js, completionHandler: nil)
+        }
+    }
 
     lazy var webView: WKWebView = {
         let webView = WKWebView(frame: CGRect.zero, configuration: {
@@ -94,6 +135,106 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
         
         if let detailVC = segue.destination as? HotelViewController {
             detailVC.configure(with: self.selectedHotel)
+        }
+    }
+    
+    @IBAction func showSort(_ sender: Any) {
+        let alert = UIAlertController(title: "Sort results by:", message: nil, preferredStyle: .actionSheet)
+        alert.popoverPresentationController?.barButtonItem = (sender as! UIBarButtonItem)
+        
+        let actionHandler: (UIAlertAction) -> Void = { action in
+            self.selectedSort = ListingSort(with: action.title!)
+        }
+        ["Name", "Price Ascending", "Price Descending"].forEach { (sortTitle) in
+            let action = UIAlertAction(title: sortTitle, style: .default, handler: actionHandler)
+            action.setValue(sortTitle == self.selectedSort.displayTitle, forKey: "checked")
+            alert.addAction(action)
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        if self.presentedViewController != nil {
+            self.presentedViewController?.dismiss(sender: self)
+        }
+        self.present(alert, animated: true)
+    }
+    
+    @IBAction func showFilter(_ sender: Any) {
+        let alert = UIAlertController(title: "Filter by price:\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
+        alert.popoverPresentationController?.barButtonItem = (sender as! UIBarButtonItem)
+        
+        let picker = UIPickerView(frame: CGRect(x: 0, y: 0, width: 300, height: 150))
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.dataSource = self
+        picker.delegate = self
+        
+        let doneButton = UIButton(type: UIButtonType.system)
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        doneButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        doneButton.addTarget(alert, action: #selector(dismiss(sender:)), for: .touchUpInside)
+        
+        alert.view.addSubview(picker)
+        alert.view.addSubview(doneButton)
+        
+        NSLayoutConstraint.activate([picker.leftAnchor.constraint(equalTo: alert.view.leftAnchor),
+                                     picker.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 20),
+                                     picker.rightAnchor.constraint(equalTo: alert.view.rightAnchor),
+                                     picker.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: 20),
+                                     doneButton.rightAnchor.constraint(equalTo: alert.view.rightAnchor, constant: -15),
+                                     doneButton.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 8)])
+        
+        if self.presentedViewController != nil {
+            self.presentedViewController?.dismiss(sender: self)
+        }
+        
+        self.present(alert, animated: true) {
+            /* UIKit doesn't offer completion blocks on its datasource-driven views,
+            so we take advantage of CATransaction for a similar effect */
+            
+            CATransaction.begin()
+            picker.reloadAllComponents()
+            CATransaction.setCompletionBlock({ 
+                picker.selectRow((self.priceRange.0/100)+1, inComponent: 0, animated: false)
+                picker.selectRow((self.priceRange.1/100)+1, inComponent: 1, animated: false)
+            })
+            CATransaction.commit()
+        }
+    }
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 11
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "$\(max(0, row - 1)*100)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        if row == 0 {
+            return NSAttributedString(string: component == 0 ? "Min" : "Max",
+                                      attributes: [NSForegroundColorAttributeName : UIColor.darkGray])
+        }
+        
+        return nil
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        var adjustedRow = row
+        
+        if row == 0 {
+            pickerView.selectRow(1, inComponent: component, animated: true)
+            adjustedRow += 1
+        }
+        
+        switch component {
+        case 0: self.priceRange.0 = max(0, adjustedRow - 1)*100
+        case 1: self.priceRange.1 = max(0, adjustedRow - 1)*100
+        default: break
         }
     }
 }

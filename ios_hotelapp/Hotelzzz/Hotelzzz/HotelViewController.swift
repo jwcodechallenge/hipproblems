@@ -42,8 +42,6 @@ class HotelViewController: UIViewController {
 
 extension HotelViewController {
     func configure(with dictionary: [AnyHashable:Any]) {
-        print(dictionary)
-        
         guard let result = dictionary["result"] as? [AnyHashable:Any],
         let hotel = result["hotel"] as? [AnyHashable:Any] else { return }
         
