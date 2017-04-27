@@ -91,6 +91,7 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
                 // DECLARE YOUR MESSAGE HANDLERS HERE
                 userContentController.add(self, name: "API_READY")
                 userContentController.add(self, name: "HOTEL_API_HOTEL_SELECTED")
+                userContentController.add(self, name: "HOTEL_API_RESULTS_READY")
 
                 return userContentController
             }()
@@ -126,6 +127,9 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
         case "HOTEL_API_HOTEL_SELECTED":
             self.selectedHotel = (message.body as! [AnyHashable:Any])
             self.performSegue(withIdentifier: "hotel_details", sender: nil)
+        case "HOTEL_API_RESULTS_READY":
+            let results = ((message.body as! [AnyHashable:Any])["results"] as! [Any])
+            self.title = "\(results.count) Results"
         default: break
         }
     }
