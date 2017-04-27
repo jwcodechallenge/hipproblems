@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PWI-c0-zZZ">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xOA-0n-pQ7">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,11 +21,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5c-fR-ui5">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gUv-kc-7R0"/>
                                 </constraints>
@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="San Francisco" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4it-RC-WFO">
-                                <rect key="frame" x="16" y="116" width="343" height="30"/>
+                                <rect key="frame" x="16" y="116" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fM7-hZ-u2F"/>
                                 </constraints>
@@ -43,16 +43,16 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cZy-QS-5fC">
-                                <rect key="frame" x="16" y="190" width="343" height="30"/>
+                                <rect key="frame" x="16" y="190" width="288" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96Z-Nc-Zbr">
-                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDw-Rs-RxP">
-                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                        <rect key="frame" x="144" y="0.0" width="144" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -63,17 +63,17 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cxL-25-x7E">
-                                <rect key="frame" x="16" y="220" width="343" height="30"/>
+                                <rect key="frame" x="16" y="220" width="288" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icd-xQ-tLg">
-                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="30"/>
                                         <state key="normal" title="2017-04-01"/>
                                         <connections>
                                             <segue destination="2hl-6e-Iig" kind="presentation" identifier="pick_check_in_date" id="WcD-aZ-s7t"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeC-8W-8hU">
-                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                        <rect key="frame" x="144" y="0.0" width="144" height="30"/>
                                         <state key="normal" title="2017-04-04"/>
                                         <connections>
                                             <segue destination="2hl-6e-Iig" kind="presentation" identifier="pick_check_out_date" id="p72-FD-jVd"/>
@@ -85,10 +85,10 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adv-mj-jZX">
-                                <rect key="frame" x="0.0" y="258" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="258" width="320" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <segue destination="mfQ-fo-jKR" kind="show" identifier="search" id="Yiy-wX-vQh"/>
+                                    <segue destination="mfQ-fo-jKR" kind="show" identifier="search" id="q8E-Qc-q0h"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -120,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-266" y="-24"/>
+            <point key="canvasLocation" x="2606" y="-342"/>
         </scene>
         <!--Searching...-->
         <scene sceneID="eSi-zF-Gld">
@@ -131,7 +131,7 @@
                         <viewControllerLayoutGuide type="bottom" id="d2L-fT-6oP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5ra-dn-F6z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -150,12 +150,42 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <segue destination="hMw-It-0eG" kind="show" identifier="hotel_details" id="jwc-WB-JAt"/>
+                        <segue destination="hMw-It-0eG" kind="showDetail" identifier="hotel_details" id="dTg-SX-TQJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsa-2b-SAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660" y="-24"/>
+            <point key="canvasLocation" x="2605" y="417"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vBw-Mo-Plc">
+            <objects>
+                <navigationController id="gej-BI-ehL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3so-5p-FNH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DbE-Qk-JbW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O9N-tT-F2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="-342"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="hu8-MI-Ipk">
+            <objects>
+                <splitViewController id="xOA-0n-pQ7" customClass="HTZSplitViewController" customModule="Hotelzzz" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Van-cc-aBR"/>
+                    <connections>
+                        <segue destination="gej-BI-ehL" kind="relationship" relationship="masterViewController" id="tr9-mZ-QdF"/>
+                        <segue destination="hMw-It-0eG" kind="relationship" relationship="detailViewController" id="rPj-Zg-62m"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adl-TE-Mp5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="-25"/>
         </scene>
         <!--Hotel Details-->
         <scene sceneID="jV1-A5-9ug">
@@ -166,35 +196,41 @@
                         <viewControllerLayoutGuide type="bottom" id="SUw-LU-qVy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="edA-w1-8bO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="The Hootin" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xY-Ql-xxp">
-                                <rect key="frame" x="16" y="353" width="275" height="32"/>
+                                <rect key="frame" x="20" y="459.5" width="660" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="₩135" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gez-aG-xn9">
-                                <rect key="frame" x="299" y="353" width="60" height="31.5"/>
+                                <rect key="frame" x="688" y="459.5" width="60" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="JmE-ki-V5R">
-                                <rect key="frame" x="169" y="186" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="JmE-ki-V5R">
+                                <rect key="frame" x="365.5" y="217.5" width="37" height="37"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="76f-Ah-Y0l">
-                                <rect key="frame" x="0.0" y="64" width="375" height="281.5"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="432"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="76f-Ah-Y0l" secondAttribute="height" multiplier="4:3" id="5M2-CV-h24"/>
+                                    <constraint firstAttribute="width" secondItem="76f-Ah-Y0l" secondAttribute="height" multiplier="16:9" id="5M2-CV-h24"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOB-S8-oFL">
-                                <rect key="frame" x="16" y="393" width="343" height="41"/>
+                                <rect key="frame" x="20" y="499.5" width="728" height="41"/>
                                 <string key="text">952 Galaxy Way
 Alba City, Mars 94113</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search and Select a Hotel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUz-gh-5tc">
+                                <rect key="frame" x="285" y="502" width="198" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -211,23 +247,27 @@ Alba City, Mars 94113</string>
                             <constraint firstItem="ZOB-S8-oFL" firstAttribute="top" secondItem="5xY-Ql-xxp" secondAttribute="bottom" constant="8" id="QFZ-iH-G8Z"/>
                             <constraint firstAttribute="trailing" secondItem="76f-Ah-Y0l" secondAttribute="trailing" id="RUy-k4-nX9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZOB-S8-oFL" secondAttribute="trailing" id="V8h-7v-C4I"/>
+                            <constraint firstItem="TUz-gh-5tc" firstAttribute="centerY" secondItem="edA-w1-8bO" secondAttribute="centerY" id="VHy-hG-748"/>
                             <constraint firstItem="gez-aG-xn9" firstAttribute="top" secondItem="76f-Ah-Y0l" secondAttribute="bottom" constant="8" id="a2K-FC-1ne"/>
                             <constraint firstItem="gez-aG-xn9" firstAttribute="leading" secondItem="5xY-Ql-xxp" secondAttribute="trailing" constant="8" id="du4-6M-bPc"/>
                             <constraint firstItem="5xY-Ql-xxp" firstAttribute="leading" secondItem="edA-w1-8bO" secondAttribute="leadingMargin" id="fBu-Id-D67"/>
+                            <constraint firstItem="TUz-gh-5tc" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="ojy-u7-mws"/>
                             <constraint firstItem="JmE-ki-V5R" firstAttribute="centerX" secondItem="76f-Ah-Y0l" secondAttribute="centerX" id="xBl-4u-8rp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hotel Details" id="BkP-pu-yFu"/>
                     <connections>
                         <outlet property="addressLabel" destination="ZOB-S8-oFL" id="gE3-Pw-VXe"/>
+                        <outlet property="emptyLabel" destination="TUz-gh-5tc" id="2cH-T8-HEa"/>
                         <outlet property="hotelNameLabel" destination="5xY-Ql-xxp" id="Bfq-mC-hhs"/>
+                        <outlet property="imageLoadingIndicator" destination="JmE-ki-V5R" id="IYc-e0-rRL"/>
                         <outlet property="photoView" destination="76f-Ah-Y0l" id="MPY-fj-9C9"/>
                         <outlet property="priceLabel" destination="gez-aG-xn9" id="pGy-fq-tEm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jN-m1-8O9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="-24"/>
+            <point key="canvasLocation" x="1793" y="509"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="xh7-QO-b3X">
@@ -238,17 +278,17 @@ Alba City, Mars 94113</string>
                         <viewControllerLayoutGuide type="bottom" id="f6D-24-cp4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="H4m-Vm-KTi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AES-8W-nwJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="64" width="768" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="511905030.41123599">
                                     <!--2017-03-22 19:50:30 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFA-wP-6Mu">
-                                <rect key="frame" x="169" y="288" width="37" height="30"/>
+                                <rect key="frame" x="365.5" y="288" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneActionWithSender:" destination="tAX-cZ-vTt" eventType="touchUpInside" id="J62-tf-Q0x"/>
@@ -277,7 +317,7 @@ Alba City, Mars 94113</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SD8-gw-afq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660" y="739"/>
+            <point key="canvasLocation" x="4318" y="-342"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cUD-Mi-qPX">
@@ -295,28 +335,11 @@ Alba City, Mars 94113</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5XH-Er-bbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-266" y="740"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="evX-ZL-zDo">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PWI-c0-zZZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="liO-CL-IgA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="der-oD-egz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-xb-BLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1135" y="-23"/>
+            <point key="canvasLocation" x="3392" y="-342"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="rPj-Zg-62m"/>
         <segue reference="p72-FD-jVd"/>
     </inferredMetricsTieBreakers>
 </document>
