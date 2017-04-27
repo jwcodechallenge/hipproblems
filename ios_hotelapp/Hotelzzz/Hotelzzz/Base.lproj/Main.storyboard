@@ -150,7 +150,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <segue destination="hMw-It-0eG" kind="showDetail" identifier="hotel_details" id="dTg-SX-TQJ"/>
+                        <segue destination="aub-D1-6sA" kind="showDetail" identifier="hotel_details" id="1p9-rY-0uJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsa-2b-SAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,7 +180,7 @@
                     <navigationItem key="navigationItem" id="Van-cc-aBR"/>
                     <connections>
                         <segue destination="gej-BI-ehL" kind="relationship" relationship="masterViewController" id="tr9-mZ-QdF"/>
-                        <segue destination="hMw-It-0eG" kind="relationship" relationship="detailViewController" id="rPj-Zg-62m"/>
+                        <segue destination="aub-D1-6sA" kind="relationship" relationship="detailViewController" id="Rca-7X-bum"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adl-TE-Mp5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,7 +267,7 @@ Alba City, Mars 94113</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jN-m1-8O9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="509"/>
+            <point key="canvasLocation" x="1794" y="1120"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="xh7-QO-b3X">
@@ -320,6 +320,22 @@ Alba City, Mars 94113</string>
             <point key="canvasLocation" x="4318" y="-342"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="UAJ-iR-UAe">
+            <objects>
+                <navigationController id="aub-D1-6sA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GfH-Y3-yNG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hMw-It-0eG" kind="relationship" relationship="rootViewController" id="IrX-kV-MGc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8y-cg-pCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="795" y="1119"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="cUD-Mi-qPX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" id="2hl-6e-Iig" sceneMemberID="viewController">
@@ -339,7 +355,7 @@ Alba City, Mars 94113</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rPj-Zg-62m"/>
         <segue reference="p72-FD-jVd"/>
+        <segue reference="1p9-rY-0uJ"/>
     </inferredMetricsTieBreakers>
 </document>

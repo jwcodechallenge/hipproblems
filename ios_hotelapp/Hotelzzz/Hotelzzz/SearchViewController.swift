@@ -137,8 +137,8 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        if let detailVC = segue.destination as? HotelViewController {
-            detailVC.configure(with: self.selectedHotel)
+        if let detailVC = segue.destination as? UINavigationController, let hotelVC = detailVC.topViewController as? HotelViewController  {
+            hotelVC.configure(with: self.selectedHotel)
         }
     }
     
